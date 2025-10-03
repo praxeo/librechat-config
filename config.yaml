@@ -125,6 +125,9 @@ endpoints:
       baseURL: "https://api.groq.com/openai/v1/"
       models:
         default:
+          - mixtral-8x7b-32768
+          - llama-3.3-70b-versatile
+          - llama-3.1-8b-instant
         fetch: true
       titleConvo: true
       titleModel: "mixtral-8x7b-32768"
@@ -137,6 +140,9 @@ endpoints:
       baseURL: "https://api.mistral.ai/v1"
       models:
         default:
+          - mistral-large-latest
+          - mistral-small-latest
+          - mistral-tiny
         fetch: true
       titleConvo: true
       titleMethod: "completion"
@@ -547,6 +553,9 @@ endpoints:
       baseURL: "https://api.together.xyz"
       models:
         default:
+          - togethercomputer/llama-2-7b-chat
+          - mistralai/Mixtral-8x7B-Instruct-v0.1
+          - meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo
         fetch: true
       titleConvo: true
       titleModel: "togethercomputer/llama-2-7b-chat"
@@ -556,4 +565,3 @@ endpoints:
       modelDisplayLabel: "together.ai"
 
 fileStrategy: "local"
-
