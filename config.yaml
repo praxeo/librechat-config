@@ -1,0 +1,150 @@
+version: 1.0.0
+cache: true
+
+speech:
+  stt:
+    openai:
+      apiKey: "${OPENAI_API_KEY}"
+      model: "gpt-4o-transcribe"
+  speechTab:
+    conversationMode: true
+    advancedMode: false
+    speechToText:
+      engineSTT: "openai"
+      languageSTT: "English (US)"
+      autoTranscribeAudio: true
+      decibelValue: -45
+      autoSendText: 0
+
+endpoints:
+  custom:
+    - name: "OpenAI"
+      apiKey: "${OPENAI_API_KEY}"
+      baseURL: "https://api.openai.com/v1"
+      models:
+        - "gpt-4o"
+        - "gpt-4o-mini"
+        - "gpt-4-turbo"
+        - "gpt-4"
+        - "gpt-3.5-turbo"
+      modelDisplayLabel: "OpenAI"
+      dropInput: true
+      dropParams: ["stop", "frequency_penalty", "presence_penalty", "temperature", "top_p", "max_tokens"]
+
+    - name: "Anthropic"
+      apiKey: "${ANTHROPIC_API_KEY}"
+      baseURL: "https://api.anthropic.com"
+      models:
+        - "claude-3-5-sonnet-20241022"
+        - "claude-3-5-haiku-20241022"
+        - "claude-3-opus-20240229"
+        - "claude-3-sonnet-20240229"
+        - "claude-3-haiku-20240307"
+      modelDisplayLabel: "Anthropic"
+      dropInput: true
+      dropParams: ["stop", "frequency_penalty", "presence_penalty", "temperature", "top_p", "max_tokens"]
+
+    - name: "Google"
+      apiKey: "${GOOGLE_API_KEY}"
+      baseURL: "https://generativelanguage.googleapis.com/v1beta"
+      models:
+        - "gemini-1.5-pro"
+        - "gemini-1.5-flash"
+        - "gemini-pro"
+      modelDisplayLabel: "Google"
+      dropInput: true
+      dropParams: ["stop", "frequency_penalty", "presence_penalty", "temperature", "top_p", "max_tokens"]
+
+    - name: "Cohere"
+      apiKey: "${COHERE_API_KEY}"
+      baseURL: "https://api.cohere.ai/v1"
+      models:
+        - "command-r-plus"
+        - "command-r"
+        - "command"
+        - "command-nightly"
+        - "command-light"
+      modelDisplayLabel: "Cohere"
+      dropInput: true
+      dropParams: ["stop", "frequency_penalty", "presence_penalty", "temperature", "top_p", "max_tokens"]
+
+    - name: "Mistral"
+      apiKey: "${MISTRAL_API_KEY}"
+      baseURL: "https://api.mistral.ai/v1"
+      models:
+        - "mistral-large-latest"
+        - "mistral-medium-latest"
+        - "mistral-small-latest"
+        - "codestral-latest"
+        - "mixtral-8x7b"
+      modelDisplayLabel: "Mistral"
+      dropInput: true
+      dropParams: ["stop", "frequency_penalty", "presence_penalty", "temperature", "top_p", "max_tokens"]
+
+    - name: "Groq"
+      apiKey: "${GROQ_API_KEY}"
+      baseURL: "https://api.groq.com/openai/v1"
+      models:
+        - "llama-3.1-405b-reasoning"
+        - "llama-3.1-70b-versatile"
+        - "llama-3.1-8b-instant"
+        - "llama3-groq-70b-8192-tool-use-preview"
+        - "llama3-groq-8b-8192-tool-use-preview"
+        - "mixtral-8x7b-32768"
+        - "gemma-7b-it"
+      modelDisplayLabel: "Groq"
+      dropInput: true
+      dropParams: ["stop", "frequency_penalty", "presence_penalty", "temperature", "top_p", "max_tokens"]
+
+    - name: "Perplexity"
+      apiKey: "${PERPLEXITY_API_KEY}"
+      baseURL: "https://api.perplexity.ai"
+      models:
+        - "llama-3.1-sonar-small-128k-online"
+        - "llama-3.1-sonar-large-128k-online"
+        - "llama-3.1-sonar-huge-128k-online"
+        - "llama-3.1-sonar-small-128k-chat"
+        - "llama-3.1-sonar-large-128k-chat"
+        - "llama-3.1-sonar-huge-128k-chat"
+      modelDisplayLabel: "Perplexity"
+      dropInput: true
+      dropParams: ["stop", "frequency_penalty", "presence_penalty", "temperature", "top_p", "max_tokens"]
+
+    - name: "Together AI"
+      apiKey: "${TOGETHERAI_API_KEY}"
+      baseURL: "https://api.together.xyz/v1"
+      models:
+        - "meta-llama/Meta-Llama-3.1-405B-Instruct-Turbo"
+        - "meta-llama/Meta-Llama-3.1-70B-Instruct-Turbo"
+        - "meta-llama/Meta-Llama-3.1-8B-Instruct-Turbo"
+        - "Qwen/Qwen2-72B-Instruct-Turbo"
+        - "mistralai/Mixtral-8x7B-Instruct-v0.1"
+      modelDisplayLabel: "Together AI"
+      dropInput: true
+      dropParams: ["stop", "frequency_penalty", "presence_penalty", "temperature", "top_p", "max_tokens"]
+
+    - name: "Fireworks AI"
+      apiKey: "${FIREWORKS_API_KEY}"
+      baseURL: "https://api.fireworks.ai/inference/v1"
+      models: []
+      modelDisplayLabel: "Fireworks AI"
+      dropInput: true
+      dropParams: ["stop", "frequency_penalty", "presence_penalty", "temperature", "top_p", "max_tokens"]
+      fetchModels: true
+
+    - name: "OpenRouter"
+      apiKey: "${OPENROUTER_KEY}"
+      baseURL: "https://openrouter.ai/api/v1"
+      models:
+        - "openai/gpt-4o"
+        - "openai/gpt-4o-mini"
+        - "anthropic/claude-3.5-sonnet"
+        - "anthropic/claude-3.5-haiku"
+        - "google/gemini-pro-1.5"
+        - "meta-llama/llama-3.1-405b-instruct"
+        - "meta-llama/llama-3.1-70b-instruct"
+      modelDisplayLabel: "OpenRouter"
+      dropInput: true
+      dropParams: ["stop", "frequency_penalty", "presence_penalty", "temperature", "top_p", "max_tokens"]
+
+fileStrategy: "local"
