@@ -18,17 +18,19 @@ interface:
 speech:
   stt:
     openai:
+      url: "https://api.openai.com/v1/audio/transcriptions"
       apiKey: "${OPENAI_API_KEY}"
-      model: "gpt-4o-transcribe"
+      model: "gpt-4o-mini-transcribe"   # or "gpt-4o-transcribe" if enabled on your account
   speechTab:
     conversationMode: true
     advancedMode: true
     speechToText:
       engineSTT: "openai"
-      languageSTT: "en-US"
+      languageSTT: "en-US"              # use code, not "English (US)"
       autoTranscribeAudio: true
       decibelValue: -45
       autoSendText: 0
+
 
 fileConfig:
   serverFileSizeLimit: 512
