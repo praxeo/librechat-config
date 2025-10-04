@@ -25,7 +25,7 @@ speech:
     advancedMode: true
     speechToText:
       engineSTT: "openai"
-      languageSTT: "English (US)"
+      languageSTT: "en-US"
       autoTranscribeAudio: true
       decibelValue: -45
       autoSendText: 0
